@@ -2,11 +2,12 @@
   "name": "@arjanfrans/compressed-binary-json-patch",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
+    "prepublish": "babel -d dist/ src/",
     "test": "mocha --recursive --check-leaks --colors",
     "test:watch": "npm test -- --watch test src",
     "cover": "nyc --reporter=html --reporter=text mocha",
@@ -21,6 +22,8 @@
   },
   "devDependencies": {
     "@arjanfrans/eslint-config-arjanfrans": "0.0.9",
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2017": "^6.22.0",
     "coveralls": "^2.11.15",
     "eslint": "^3.12.2",
     "mocha": "^3.2.0",
