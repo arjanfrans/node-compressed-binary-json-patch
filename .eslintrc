@@ -1,0 +1,6 @@
+{
+    "extends": "@arjanfrans/eslint-config-arjanfrans",
+    "rules": {
+        "semi": "off"
+    }
+}
