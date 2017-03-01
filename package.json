@@ -1,6 +1,6 @@
 {
   "name": "@arjanfrans/compressed-binary-json-patch",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -32,6 +32,6 @@
   "dependencies": {
     "fast-json-patch": "^1.1.8",
     "msgpack-lite": "^0.1.26",
-    "string-numeral-system": "0.0.3"
+    "string-numeral-system": "0.0.4"
   }
 }
