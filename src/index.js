@@ -80,21 +80,29 @@ function BinaryDiffProtocol (compressionMapping, throwOnUnmappedKey) {
         return transformDiff(diff, UNPACK_DIFF_KEYS, INVERTED_OPERATIONS_KEYS, decompressionMapping)
     }
 
-    function pack (data, previousData) {
+    function pack (data, previousData, inspect) {
         const diff = jsonpatch.compare(previousData || {}, data)
         const compressedDiff = compress(diff)
         const encodedDiff = msgpack.encode(compressedDiff)
 
+        if (typeof inspect === 'function') {
+            inspect(data, diff, compressedDiff, encodedDiff);
+        }
+
         return encodedDiff
     }
 
-    function unpack (binaryData, previousData) {
+    function unpack (binaryData, previousData, inspect) {
         const encodedDiff = new Uint8Array(binaryData)
         const compressedDiff = msgpack.decode(encodedDiff)
         const diff = decompress(compressedDiff)
         const data = Object.assign({}, previousData)
 
         jsonpatch.apply(data, diff)
+
+        if (typeof inspect === 'function') {
+            inspect(data, diff, compressedDiff, encodedDiff);
+        }
 
         return data
     }
