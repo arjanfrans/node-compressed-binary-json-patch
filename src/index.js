@@ -1,4 +1,3 @@
-const debug = require('debug');
 const StringNumeralSystem = require('string-numeral-system')
 
 const jsonpatch = require('fast-json-patch')

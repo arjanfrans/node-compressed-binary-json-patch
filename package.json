@@ -21,7 +21,7 @@
     "url": "https://github.com/arjanfrans/node-compressed-binary-json-patch"
   },
   "devDependencies": {
-    "@arjanfrans/eslint-config-arjanfrans": "0.0.9",
+    "@arjanfrans/eslint-config-arjanfrans": "0.0.10",
     "babel-cli": "^6.23.0",
     "babel-preset-es2017": "^6.22.0",
     "coveralls": "^2.11.15",
@@ -32,6 +32,6 @@
   "dependencies": {
     "fast-json-patch": "^1.1.8",
     "msgpack-lite": "^0.1.26",
-    "string-numeral-system": "0.0.2"
+    "string-numeral-system": "0.0.3"
   }
 }
